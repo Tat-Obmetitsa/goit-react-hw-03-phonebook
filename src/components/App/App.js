@@ -35,10 +35,6 @@ class App extends Component {
       // console.log('Обновилось поле contacts, записываю contacts в хранилище');
       localStorage.setItem('contacts', JSON.stringify(newContact));
     }
-
-    if (newContact.length > prevContacts.length && prevContacts.length !== 0) {
-      this.toggleModal();
-    }
   }
 
   addContact = data => {
@@ -74,11 +70,6 @@ class App extends Component {
   };
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
-  };
-  toggleModal = () => {
-    this.setState(({ showModal }) => ({
-      showModal: !showModal,
-    }));
   };
   render() {
     const { filter } = this.state;
